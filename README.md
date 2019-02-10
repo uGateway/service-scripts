@@ -10,8 +10,6 @@ Restart the RAK831 LoRa concentrator module via software.
 #### update.sh
 Used for @reboot crontab to get new service scripts.
 
-#### update-on-reboot
-Add update-scripts.sh to crontab if doesn't exist.
 
 
 Got a suggestion? Email ugateway@coreelectronics.com.au
