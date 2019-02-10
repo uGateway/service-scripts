@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo grep '/home/pi/Desktop/service-scripts/update-scripts.sh' /etc/crontab || echo '@reboot bash /home/pi/Desktop/service-scripts/update-scripts.sh' >> /etc/crontab
+
+read -p "Done - uGateway service scripts will be updated on every reboot!. Press ENTER to close" key
