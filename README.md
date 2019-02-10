@@ -7,7 +7,7 @@ Region selection between AS923 and AU915.
 #### soft-restart.sh
 Restart the RAK831 LoRa concentrator module via software.
 
-#### update-scripts.sh
+#### update.sh
 Used for @reboot crontab to get new service scripts.
 
 #### update-on-reboot
