@@ -1,5 +1,5 @@
 ## Handy scripts for maintaining your uGateway
-These scripts can be found at ```/home/pi/ugateway-scripts```
+These scripts can be found at ```/home/pi/ugateway-scripts``` (or via the shortcut on the desktop ```uGateway Maintenance```)
 
 #### region-select.sh
 Region selection between AS923 and AU915.
