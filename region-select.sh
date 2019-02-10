@@ -20,6 +20,6 @@ bash soft-restart.sh &
 
 echo "Note - uGateway is configured to use router.as1.thethings.network - this is the same for AS923 / AU915"
 echo " "
-echo "uGateway might take a minute or so to reconnect to TTN)"
+echo "uGateway might take a minute or so to reconnect to TTN"
 echo " "
 read -p "Press ENTER to close" key
