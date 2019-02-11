@@ -21,12 +21,8 @@ fi
 GATEWAY_EUI=$(cat /sys/class/net/$GATEWAY_EUI_NIC/address | awk -F\: '{print $1$2$3"FFFE"$4$5$6}')
 GATEWAY_EUI=${GATEWAY_EUI^^} # toupper
 
-# Update Gateway ID from original
-if grep -q "445D90" /opt/ttn-gateway/bin/local_conf.json; then    
-    sudo sed -i '/445D90/c\"servers": [ { "gateway_ID":  "$GATEWAY_EUI", } ],' /opt/ttn-gateway/bin/local_conf.json
-    echo " "
-    echo "Gateway ID updated to $GATEWAY_EUI"
-fi
+# Update Gateway ID
+sudo sed -i '/gateway_ID/c\"gateway_ID": "$GATEWAY_EUI",' /opt/ttn-gateway/bin/local_conf.json
 
 echo "Gateway ID: $GATEWAY_EUI"
 echo " "
