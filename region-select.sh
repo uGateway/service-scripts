@@ -13,7 +13,8 @@ clear
 # Get first non-loopback network device that is currently connected
 GATEWAY_EUI_NIC=$(ip -oneline link show up 2>&1 | grep -v LOOPBACK | sed -E 's/^[0-9]+: ([0-9a-z]+): .*/\1/' | head -1)
 if [[ -z $GATEWAY_EUI_NIC ]]; then
-    echo "ERROR: Can't detect LoRa module, exiting."        
+    echo "ERROR: Can't detect LoRa module, exiting."
+    $SHELL
     exit 1
 fi
 
