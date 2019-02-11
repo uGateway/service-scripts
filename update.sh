@@ -3,7 +3,7 @@
 # Test the connection, wait if needed.
 while [[ $(ping -c1 google.com 2>&1 | grep " 0% packet loss") == "" ]]; do
   echo "[uGateway]: Waiting for internet connection..."
-  sleep 30
+  sleep 5
   done
 
 # Ensure we're in the right directory
