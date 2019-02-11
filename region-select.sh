@@ -1,13 +1,14 @@
 #!/bin/sh
 
+cd /home/pi/ugateway-scripts
+
 # Test the connection, wait if needed.
 echo "Waiting for an internet connection (If issues - have you updated WiFi password?)"
 while [[ $(ping -c1 google.com 2>&1 | grep " 0% packet loss") == "" ]]; do
   echo "[uGateway]: Waiting for internet connection..."
   sleep 30
   done
-echo " "
-echo "Internet connection found"
+clear
 
 # Update Gateway ID
 if grep -q "445D90" /opt/ttn-gateway/bin/local_conf.json; then
@@ -25,12 +26,6 @@ if grep -q "445D90" /opt/ttn-gateway/bin/local_conf.json; then
     sudo sed -i '/445D90/c\"servers": [ { "gateway_ID":  "$GATEWAY_EUI", } ],' /opt/ttn-gateway/bin/local_conf.json
     echo " "
     echo "Gateway ID updated to $GATEWAY_EUI"
-fi
-
-cd /home/pi/ugateway-scripts
-
-if grep -q SomeString "$File"; then
-  Some Actions # SomeString was found
 fi
 
 read -p "Make a selection, then press ENTER. 1=AS923 or 2=AS915 (we recommend AS923): " region
