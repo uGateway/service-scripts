@@ -22,7 +22,7 @@ GATEWAY_EUI=$(cat /sys/class/net/$GATEWAY_EUI_NIC/address | awk -F\: '{print $1$
 GATEWAY_EUI=${GATEWAY_EUI^^} # toupper
 
 # Update Gateway ID
-sudo sed -i '/gateway_ID/c\"gateway_ID": "$GATEWAY_EUI",' /opt/ttn-gateway/bin/local_conf.json
+sudo sed -i "/gateway_ID/c\\"gateway_ID\": \"$GATEWAY_EUI\"," /opt/ttn-gateway/bin/local_conf.json
 
 echo "Gateway ID: $GATEWAY_EUI"
 echo " "
