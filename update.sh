@@ -27,15 +27,5 @@ else
     echo "No updates found"
 fi
 
-# removed as there are better ways to go about updates.
-# check for a runonce - used for future fixes if need be (2nd line will store the unique code to avoid re-runs)
-#if [ -f runonce.sh ]; then
-#    UNIQUE=$(head -2 runonce.sh | tail -1)
-#    if ! grep -q "$UNIQUE" ".history"; then
-#        sudo bash runonce.sh
-#        echo $UNIQUE >> .history        
-#    fi    
-#fi
-
 # append the activity log
 echo `date` >> update.log
